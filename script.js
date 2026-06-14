@@ -1,10 +1,12 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiY29ubm9ycGlhIiwiYSI6ImNtcThncW56eDAybWYycm9keHB0cWQwOHgifQ.wyaMP4dsFjEfFL7s0i8YRw';
+
 const map = new mapboxgl.Map({
-  container: 'map', // container ID
-  style: 'mapbox://styles/connorpia/cmqdouab9008a01sm2u8e1cmi', // your Style URL goes here
-  center: [-116.57, 32.94], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-  zoom: 12 // starting zoom
-    });
+    container: 'map',
+    style: 'mapbox://styles/connorpia/cmqdouab9008a01sm2u8e1cmi',
+    center: [-116.57, 32.94],
+    zoom: 12
+});
+
 map.on('load', function () {
 
     map.addSource('campgrounds-data', {
@@ -16,65 +18,62 @@ map.on('load', function () {
         type: 'geojson',
         data: 'data/ParkEntryPoints.geojson'
     });
-map.addLayer({
-    id: 'campgrounds-layer',
-    type: 'circle',
-    source: 'campgrounds-data',
-    paint: {
-        'circle-color': '#2E8B57',
-        'circle-radius': 8,
-        'circle-stroke-width': 2,
-        'circle-stroke-color': '#ffffff'
-    }
-});
 
-map.addLayer({
-    id: 'entrance-layer',
-    type: 'circle',
-    source: 'entrance-data',
-    paint: {
-        'circle-color': '#D95F02',
-        'circle-radius': 9,
-        'circle-stroke-width': 2,
-        'circle-stroke-color': '#ffffff'
-    }
-});
- map.on('click', 'campgrounds-layer', function (e) {
+    map.addLayer({
+        id: 'campgrounds-layer',
+        type: 'circle',
+        source: 'campgrounds-data',
+        paint: {
+            'circle-color': '#2E8B57',
+            'circle-radius': 8,
+            'circle-stroke-width': 2,
+            'circle-stroke-color': '#ffffff'
+        }
+    });
 
+    map.addLayer({
+        id: 'entrance-layer',
+        type: 'circle',
+        source: 'entrance-data',
+        paint: {
+            'circle-color': '#D95F02',
+            'circle-radius': 9,
+            'circle-stroke-width': 2,
+            'circle-stroke-color': '#ffffff'
+        }
+    });
+
+    // Campgrounds popup
     map.on('click', 'campgrounds-layer', function (e) {
 
-    const props = e.features[0].properties;
+        const props = e.features[0].properties;
 
-    new mapboxgl.Popup()
-        .setLngLat(e.lngLat)
-        .setHTML(
-            `
-            <h3>${props.Campground}</h3>
-            <img src="${props.image}" style="width:220px;">
-            <p><strong>${props.category}</strong></p>
-            <p>${props.description}</p>
-            `
-        )
-        .addTo(map);
+        new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML(`
+                <h3>${props.Campground}</h3>
+                <img src="${props.image}" style="width:220px;">
+                <p><strong>${props.category}</strong></p>
+                <p>${props.description}</p>
+            `)
+            .addTo(map);
 
+    });
 
-}); 
- map.on('click', 'entrance-layer', function (e) {
+    // Entrance popup
+    map.on('click', 'entrance-layer', function (e) {
 
-    const props = e.features[0].properties;
+        const props = e.features[0].properties;
 
-    new mapboxgl.Popup()
-        .setLngLat(e.lngLat)
-        .setHTML(
-            `
-            <h3>${props.PARK_NAME}</h3>
-            <img src="${props.image}" style="width:220px;">
-            <p>${props.description}</p>
-            `
-        )
-        .addTo(map);
+        new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML(`
+                <h3>${props.PARK_NAME}</h3>
+                <img src="${props.image}" style="width:220px;">
+                <p>${props.description}</p>
+            `)
+            .addTo(map);
 
+    });
 
-});
-  
 });
