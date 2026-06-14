@@ -60,8 +60,9 @@ map.on('load', function () {
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
             .setHTML(`
-                <h3>${props.Campground}</h3>
-                <img src="${props.image}" style="width:220px;">
+                <h3 style="margin-bottom:5px;">${props.Campground}</h3>
+                <img src="${props.image}"
+     style="width:100%; border-radius:8px; margin-top:5px; margin-bottom:5px;">
                 <p><strong>${props.category}</strong></p>
                 <p>${props.description}</p>
             `)
@@ -77,8 +78,9 @@ map.on('load', function () {
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
             .setHTML(`
-                <h3>${props.PARK_NAME}</h3>
-                <img src="${props.image}" style="width:220px;">
+                <h3 style="margin-bottom:5px;">${props.PARK_NAME}</h3>
+                <img src="${props.image}"
+     style="width:100%; border-radius:8px; margin-top:5px; margin-bottom:5px;">
                 <p>${props.description}</p>
             `)
             .addTo(map);
