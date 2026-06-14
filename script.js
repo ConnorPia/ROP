@@ -39,7 +39,7 @@ map.addLayer({
     source: 'boundary-data',
     paint: {
         'line-color': '#1B5E20',
-        'line-width': 3
+        'line-width': 2
     }
 });
     
