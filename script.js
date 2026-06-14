@@ -28,6 +28,22 @@ map.on('load', function () {
         data: 'data/ParkEntryPoints.geojson'
     });
 
+    const bounds = new mapboxgl.LngLatBounds();
+
+fetch('data/Campgrounds.geojson')
+    .then(response => response.json())
+    .then(data => {
+
+        data.features.forEach(feature => {
+            bounds.extend(feature.geometry.coordinates);
+        });
+
+        map.fitBounds(bounds, {
+            padding: 80
+        });
+
+    });
+    
     map.addLayer({
         id: 'campgrounds-layer',
         type: 'circle',
