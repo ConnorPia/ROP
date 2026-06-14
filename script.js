@@ -84,5 +84,22 @@ map.on('load', function () {
             .addTo(map);
 
     });
+// Campgrounds hover
+map.on('mouseenter', 'campgrounds-layer', () => {
+    map.getCanvas().style.cursor = 'pointer';
+});
 
+map.on('mouseleave', 'campgrounds-layer', () => {
+    map.getCanvas().style.cursor = '';
+});
+
+// Entrance hover
+map.on('mouseenter', 'entrance-layer', () => {
+    map.getCanvas().style.cursor = 'pointer';
+});
+
+map.on('mouseleave', 'entrance-layer', () => {
+    map.getCanvas().style.cursor = '';
+});
+    
 });
