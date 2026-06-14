@@ -9,6 +9,12 @@ const map = new mapboxgl.Map({
 
 map.addControl(new mapboxgl.NavigationControl());
 
+map.addControl(
+    new mapboxgl.ScaleControl({
+        unit: 'imperial'
+    })
+);
+
 map.on('load', function () {
 
     map.addSource('campgrounds-data', {
