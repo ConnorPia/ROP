@@ -1,0 +1,43 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.57925181763554,
+          32.95947482011324
+        ]
+      },
+      "properties": {
+        "OBJECTID": 1,
+        "PARK_NAME": "Cuyamaca Rancho SP",
+        "County": "San Diego",
+        "STREET_ADD": "E Mesa Fire Rd",
+        "City": "Julian",
+        "Zip": 92036,
+        "LAT": 32.95946999,
+        "LON": -116.57924,
+        "PARK_WEB_P": "http://www.parks.ca.gov/?page_id=667",
+        "MAP_TYPE_1": "Park Brochure",
+        "MAP_LINK_1": "https://www.parks.ca.gov/pages/667/files/CuyamacaRanchoFinalWebLayout060917.pdf",
+        "MAP_TYPE_2": "Green Valley; Paso Picacho Campgrounds",
+        "MAP_LINK_2": "http://www.parks.ca.gov/pages/667/files/CuyamacaRanchoCampgound081816.pdf",
+        "UNIT_NBR": "618",
+        "MGMT_STATU": "DPR-operated Unit or Property",
+        "GIS_Acres": 24613.52,
+        "GlobalID": "cf766c2b-aef2-49b4-a7c4-fe425c252de2",
+        "GISID": "GIS0006900",
+        "WHAT3WORD_": "spiced.routs.breaches",
+        "category": "Park Entrance",
+        "description": "Main entrance to Cuyamaca Rancho State Park, providing visitor access, orientation information, and connections to the park's camping and recreation areas.",
+        "image": "assets/images/7.Entrance Sign at Cuyamaca Rancho State Park.jpg",
+        "caption": "Entrance area of Cuyamaca Rancho State Park",
+        "site_title": "Cuyamaca Rancho State Park Entrance",
+        "park_name": "Cuyamaca Rancho State Park"
+      }
+    }
+  ]
+}
