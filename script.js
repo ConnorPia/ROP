@@ -44,10 +44,22 @@ map.addLayer({
     const campground =
     e.features[0].properties.Campground;
 
+    const category =
+    e.features[0].properties.category;
+
+    const description =
+    e.features[0].properties.description;
+
+    const image =
+    e.features[0].properties.image;
+
     new mapboxgl.Popup()
         .setLngLat(e.lngLat)
         .setHTML(
-            '<h3>' + campground + '</h3>'
+            '<h3>' + campground + '</h3>' +
+            '<img src="' + image + '" style="width:220px;"><br>' +
+            '<p><strong>' + category + '</strong></p>' +
+            '<p>' + description + '</p>'
         )
         .addTo(map);
 
@@ -57,12 +69,21 @@ map.addLayer({
     const park =
     e.features[0].properties.PARK_NAME;
 
+    const description =
+    e.features[0].properties.description;
+
+    const image =
+    e.features[0].properties.image;
+
     new mapboxgl.Popup()
         .setLngLat(e.lngLat)
         .setHTML(
-            '<h3>' + park + '</h3>'
+            '<h3>' + park + '</h3>' +
+            '<img src="' + image + '" style="width:220px;"><br>' +
+            '<p>' + description + '</p>'
         )
         .addTo(map);
+
 
 });
   
