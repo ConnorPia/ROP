@@ -7,3 +7,35 @@ body {
   top: 0;
   bottom: 0;
   width: 100%; }
+#legend {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+#legend h4 {
+    margin: 0 0 8px 0;
+}
+
+.campground-dot,
+.entrance-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.campground-dot {
+    background: #2E8B57;
+}
+
+.entrance-dot {
+    background: #D95F02;
+}
