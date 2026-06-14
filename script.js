@@ -12,7 +12,8 @@ map.addControl(new mapboxgl.NavigationControl());
 map.addControl(
     new mapboxgl.ScaleControl({
         unit: 'imperial'
-    })
+    }),
+    'bottom-right'
 );
 
 map.on('load', function () {
