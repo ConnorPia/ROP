@@ -16,5 +16,28 @@ map.on('load', function () {
         type: 'geojson',
         data: 'data/ParkEntryPoints.geojson'
     });
+map.addLayer({
+    id: 'campgrounds-layer',
+    type: 'circle',
+    source: 'campgrounds-data',
+    paint: {
+        'circle-color': '#2E8B57',
+        'circle-radius': 8,
+        'circle-stroke-width': 2,
+        'circle-stroke-color': '#ffffff'
+    }
+});
 
+map.addLayer({
+    id: 'entrance-layer',
+    type: 'circle',
+    source: 'entrance-data',
+    paint: {
+        'circle-color': '#D95F02',
+        'circle-radius': 9,
+        'circle-stroke-width': 2,
+        'circle-stroke-color': '#ffffff'
+    }
+});
+  
 });
