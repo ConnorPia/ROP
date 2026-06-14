@@ -3,7 +3,7 @@ const map = new mapboxgl.Map({
   container: 'map', // container ID
   style: 'mapbox://styles/connorpia/cmq96pt92004e01sq55j3bu5v', // your Style URL goes here
   center: [-116.58, 32.95], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-  zoom: 9 // starting zoom
+  zoom: 11 // starting zoom
     });
 map.on('load', function () {
 
