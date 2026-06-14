@@ -28,6 +28,21 @@ map.on('load', function () {
         data: 'data/ParkEntryPoints.geojson'
     });
 
+    map.addSource('boundary-data', {
+    type: 'geojson',
+    data: 'data/ParkBoundary.geojson'
+});
+
+map.addLayer({
+    id: 'boundary-outline',
+    type: 'line',
+    source: 'boundary-data',
+    paint: {
+        'line-color': '#1B5E20',
+        'line-width': 3
+    }
+});
+    
     const bounds = new mapboxgl.LngLatBounds();
 
 fetch('data/Campgrounds.geojson')
