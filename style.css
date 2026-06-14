@@ -11,6 +11,9 @@ body {
     position: absolute;
     bottom: 30px;
     left: 10px;
+
+    z-index: 9999;
+
     background: white;
     padding: 10px;
     border-radius: 5px;
