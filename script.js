@@ -1,4 +1,5 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiY29ubm9ycGlhIiwiYSI6ImNtcThncW56eDAybWYycm9keHB0cWQwOHgifQ.wyaMP4dsFjEfFL7s0i8YRw';
+console.log("SCRIPT UPDATED TEST")
 const map = new mapboxgl.Map({
   container: 'map', // container ID
   style: 'mapbox://styles/connorpia/cmq96pt92004e01sq55j3bu5v', // your Style URL goes here
