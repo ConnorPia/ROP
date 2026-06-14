@@ -2,8 +2,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY29ubm9ycGlhIiwiYSI6ImNtcThncW56eDAybWYycm9ke
 const map = new mapboxgl.Map({
   container: 'map', // container ID
   style: 'mapbox://styles/connorpia/cmqdouab9008a01sm2u8e1cmi', // your Style URL goes here
-  center: [-116.58, 32.95], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-  zoom: 11 // starting zoom
+  center: [-116.57, 32.94], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+  zoom: 12 // starting zoom
     });
 map.on('load', function () {
 
@@ -38,6 +38,32 @@ map.addLayer({
         'circle-stroke-width': 2,
         'circle-stroke-color': '#ffffff'
     }
+});
+ map.on('click', 'campgrounds-layer', function (e) {
+
+    const campground =
+    e.features[0].properties.Campground;
+
+    new mapboxgl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML(
+            '<h3>' + campground + '</h3>'
+        )
+        .addTo(map);
+
+}); 
+ map.on('click', 'entrance-layer', function (e) {
+
+    const park =
+    e.features[0].properties.PARK_NAME;
+
+    new mapboxgl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML(
+            '<h3>' + park + '</h3>'
+        )
+        .addTo(map);
+
 });
   
 });
