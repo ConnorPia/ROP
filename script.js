@@ -5,4 +5,16 @@ const map = new mapboxgl.Map({
   center: [-122.27, 37.87], // starting position [lng, lat]. Note that lat must be set between -90 and 90
   zoom: 9 // starting zoom
     });
+map.on('load', function () {
 
+    map.addSource('campgrounds-data', {
+        type: 'geojson',
+        data: 'data/Campgrounds.geojson'
+    });
+
+    map.addSource('entrance-data', {
+        type: 'geojson',
+        data: 'data/ParkEntryPoints.geojson'
+    });
+
+});
