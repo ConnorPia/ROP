@@ -4,7 +4,7 @@ const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/connorpia/cmqdouab9008a01sm2u8e1cmi',
     center: [-116.57, 32.94],
-    zoom: 12
+    zoom: 10
 });
 
 map.addControl(new mapboxgl.NavigationControl());
@@ -42,22 +42,6 @@ map.addLayer({
         'line-width': 3
     }
 });
-    
-    const bounds = new mapboxgl.LngLatBounds();
-
-fetch('data/Campgrounds.geojson')
-    .then(response => response.json())
-    .then(data => {
-
-        data.features.forEach(feature => {
-            bounds.extend(feature.geometry.coordinates);
-        });
-
-        map.fitBounds(bounds, {
-            padding: 80
-        });
-
-    });
     
     map.addLayer({
         id: 'campgrounds-layer',
