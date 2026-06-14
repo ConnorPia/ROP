@@ -30,7 +30,7 @@ map.on('load', function () {
 
     map.addSource('boundary-data', {
     type: 'geojson',
-    data: 'data/ParkBoundary.geojson'
+    data: 'data/ParkBoundaries.geojson'
 });
 
 map.addLayer({
