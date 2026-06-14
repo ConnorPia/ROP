@@ -41,46 +41,36 @@ map.addLayer({
 });
  map.on('click', 'campgrounds-layer', function (e) {
 
-    const campground =
-    e.features[0].properties.Campground;
+    map.on('click', 'campgrounds-layer', function (e) {
 
-    const category =
-    e.features[0].properties.category;
-
-    const description =
-    e.features[0].properties.description;
-
-    const image =
-    e.features[0].properties.image;
+    const props = e.features[0].properties;
 
     new mapboxgl.Popup()
         .setLngLat(e.lngLat)
         .setHTML(
-            '<h3>' + campground + '</h3>' +
-            '<img src="' + image + '" style="width:220px;"><br>' +
-            '<p><strong>' + category + '</strong></p>' +
-            '<p>' + description + '</p>'
+            `
+            <h3>${props.Campground}</h3>
+            <img src="${props.image}" style="width:220px;">
+            <p><strong>${props.category}</strong></p>
+            <p>${props.description}</p>
+            `
         )
         .addTo(map);
+
 
 }); 
  map.on('click', 'entrance-layer', function (e) {
 
-    const park =
-    e.features[0].properties.PARK_NAME;
-
-    const description =
-    e.features[0].properties.description;
-
-    const image =
-    e.features[0].properties.image;
+    const props = e.features[0].properties;
 
     new mapboxgl.Popup()
         .setLngLat(e.lngLat)
         .setHTML(
-            '<h3>' + park + '</h3>' +
-            '<img src="' + image + '" style="width:220px;"><br>' +
-            '<p>' + description + '</p>'
+            `
+            <h3>${props.PARK_NAME}</h3>
+            <img src="${props.image}" style="width:220px;">
+            <p>${props.description}</p>
+            `
         )
         .addTo(map);
 
