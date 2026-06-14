@@ -42,3 +42,23 @@ body {
 .entrance-dot {
     background: #D95F02;
 }
+
+#title {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: white;
+    padding: 10px 20px;
+
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+
+    z-index: 1;
+}
